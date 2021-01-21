@@ -29,9 +29,13 @@ Scatter showing number of beds vs. number of bathrooms. Larger markers indicate 
 
 ![alt text](https://raw.githubusercontent.com/shayan-saif/housing-prediction/main/graphs/scatterbedbath.png "Scatter plot showing the frequency of beds and baths")
 
-When the data are plotted on a world map, we can see that a number of points have incorrect latitudes and longitudes, since this dataset is supposed to only reflect the United States. All points outside of the continental United States were removed. ![](RackMultipart20210121-4-qotoiq_html_b2a08cdee952a29b.png)
+When the data are plotted on a world map, we can see that a number of points have incorrect latitudes and longitudes, since this dataset is supposed to only reflect the United States. All points outside of the continental United States were removed.
+![alt text](https://raw.githubusercontent.com/shayan-saif/housing-prediction/main/graphs/maptotal.png "All listings as seen on a world map")
 
 If we zoom in on the continental US and color each point by state, we see that the dataset covers close to the entire country, with only a little bit of sparseness in the west. This means that our models should be able to predict pricing accurately irrespective of state.
+
+![alt text](https://raw.githubusercontent.com/shayan-saif/housing-prediction/main/graphs/mapus.png "Listings filtered to the United States")
+
 
 ## Data Preparation
 
@@ -62,7 +66,7 @@ We imported the Decision Tree Regressor class from the sklearn.tree library. We 
 
 We scaled the training and testing features using the StandardScaler from the preprocessing scikit learn library. This ensured that the algorithm could easily distinguish between the different values it was given. Afterwards, we created the model using the following layers:
 
-![](RackMultipart20210121-4-qotoiq_html_8f2653df1997db55.png)
+![alt text](https://raw.githubusercontent.com/shayan-saif/housing-prediction/main/graphs/deepneuralnet.png "Our deep neural network configuration")
 
 The model takes in 11 features (sqfeet, beds, baths, etc.) and processes it through three hidden relu layers of size 5, and outputs 1 value. The model was compiled using mean squared error as the loss, adam as the optimizer, and mean squared error as the metric. Finally, the model was run using the training and testing dataset. The results were very poor and the model improved very slightly through 10 epochs. We believe this may be because the optimizer had found a local minimum for the loss and could not be improved further.
 
@@ -78,11 +82,14 @@ The model takes in 11 features (sqfeet, beds, baths, etc.) and processes it thro
 
 Decision Tree Regressor was the most accurate regression model for this dataset. Here are its predictions for different features as the x-axis.
 
-![](RackMultipart20210121-4-qotoiq_html_4d7c084686021314.png) ![](RackMultipart20210121-4-qotoiq_html_e46a151029eb0a66.png)
+![alt text](https://raw.githubusercontent.com/shayan-saif/housing-prediction/main/graphs/predarea.png "Our prediction of Square footage based on price")
 
-![](RackMultipart20210121-4-qotoiq_html_fa136b82e45c66ce.png)
+![alt text](https://raw.githubusercontent.com/shayan-saif/housing-prediction/main/graphs/predlatitude.png "Our prediction of latitude based on price")
 
-![](RackMultipart20210121-4-qotoiq_html_5c88c395e45c4b9f.png)
+![alt text](https://raw.githubusercontent.com/shayan-saif/housing-prediction/main/graphs/predbed.png "Our prediction of the number of beds based on price")
+
+![alt text](https://raw.githubusercontent.com/shayan-saif/housing-prediction/main/graphs/predbath.png "Our predction of the number of baths based on price")
+
 
 ## Appendix
 
