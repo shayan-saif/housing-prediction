@@ -1,9 +1,9 @@
 # Machine Learning Final Project Report
 
-November 11, 2020
- INFR 3700
- Reese Daniel &amp; Shayan Saif
- University of Ontario Institute of Technology
+November 11, 2020  
+INFR 3700  
+Reese Daniel &amp; Shayan Saif  
+University of Ontario Institute of Technology  
 
 ## Introduction
 
