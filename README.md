@@ -11,23 +11,23 @@ The United States of America is a large country with a diverse range of places t
 
 The USA Housing Listings dataset, which is the dataset we elected to use for this project, scrapes data from Craigslist related to apartments, condos, houses, and other housing types available for rent across the United States. The dataset includes around 385,000 observations and 22 columns. Columns include price per month, type of property (apartment, house, townhouse, condo, etc.), square footage, number of beds, number of bathrooms, latitude, longitude, US state, whether cats/dogs are allowed, whether smoking is allowed, if the property is wheelchair accessible, if there is electric vehicle charging, and if the property comes furnished. The data were first scraped from Craigslist in December 2019, and were most recently updated in June 2020.
 
-## Data Graphs &amp; Insights ![](RackMultipart20210121-4-qotoiq_html_4858336d11d3df72.png)
+## Data Graphs &amp; Insights
 
 Frequencies of housing types. Apartments constituted the hefty majority of the dataset. For the sake of simplicity and to avoid the need to do one hot encoding, all housing types besides apartments were removed. Thus, the &#39;type&#39; column was removed as well.
 
-![](RackMultipart20210121-4-qotoiq_html_cefcfb5ac86f7060.png)
+![alt text](https://raw.githubusercontent.com/shayan-saif/housing-prediction/main/graphs/frequencytypes.png "Frequency of different types of properties")
 
 Histogram of housing prices. Most housing listings in the dataset are between $500 and $4,000, indicating that our model will most likely be much better at predicting prices for apartments that cost only a few thousand dollars per month. To prevent outliers from negatively affecting our models, we removed all apartments with prices greater than $10,000. There were also 1070 rows with a price of $0. We assumed that these are outliers because the listers probably just did not want to share online the price of their units for rent. These rows were removed.
 
-![](RackMultipart20210121-4-qotoiq_html_22ed9d39a41f7fe3.png)
+![alt text](https://raw.githubusercontent.com/shayan-saif/housing-prediction/main/graphs/histogramprices.png "Histogram of house prices")
 
 Histogram of housing square feet. Most house listings in the dataset are less than 1500 square feet. 665 rows indicated a square footage of less than 100 sq. ft., so these rows were removed, since they were likely errors.
 
-![](RackMultipart20210121-4-qotoiq_html_7a2fda5a918e37e1.png)
+![alt text](https://raw.githubusercontent.com/shayan-saif/housing-prediction/main/graphs/histogramarea.png "Histogram of square footage")
 
 Scatter showing number of beds vs. number of bathrooms. Larger markers indicate a higher occurrence of that bed/bathroom combination. By far, the most common units have 1 bed/1 bathroom, 2 beds/2 bathrooms, or 2 beds/1 bathroom. The range of beds is [0,8] and the range of bathrooms is also [0,8], giving us 64 different combinations.
 
-![](RackMultipart20210121-4-qotoiq_html_452dddb8fdd6b439.png)
+![alt text](https://raw.githubusercontent.com/shayan-saif/housing-prediction/main/graphs/scatterbedbath.png "Scatter plot showing the frequency of beds and baths")
 
 When the data are plotted on a world map, we can see that a number of points have incorrect latitudes and longitudes, since this dataset is supposed to only reflect the United States. All points outside of the continental United States were removed. ![](RackMultipart20210121-4-qotoiq_html_b2a08cdee952a29b.png)
 
